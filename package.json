@@ -2,7 +2,6 @@
   "name": "middle.messenger.praktikum.yandex",
   "version": "1.0.0",
   "description": "Hometask project",
-  "main": "src/layout/index.js",
   "scripts": {
     "dev": "parcel src/layout/index.html",
     "start": "parcel src/layout/index.html -p 3000",
