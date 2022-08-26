@@ -1,0 +1,25 @@
+@use "../../styles/theme.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/colors.scss";
+
+.dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $dark-black;
+    padding: theme.extent(2);
+
+    .dialog-header__avatar-box {
+        display: flex;
+        align-items: center;
+
+        .dialog-header__name {
+            color: $usual-bright;
+            margin-left: theme.extent(2);
+        }
+    }
+
+    .dialog-header__menu-items__add {
+        margin-right: theme.extent(2);
+    }
+}

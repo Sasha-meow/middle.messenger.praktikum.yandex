@@ -1,0 +1,27 @@
+@use "../../styles/theme.scss";
+@import "../../styles/mixins.scss";
+
+.primary-form {
+    @include flexCol;
+    @include flexCenter;
+    padding: theme.extent(7) theme.extent(4);
+
+    .primary-form__title {
+        margin-bottom: theme.extent(4);
+    }
+
+    .primary-form__image {
+        height: theme.extent(15);
+        margin-bottom: theme.extent(2);
+    }
+
+    .primary-form__buttons-container {
+        @include flexCol;
+        @include flexCenter;
+        margin-top: theme.extent(6);
+
+        .primary-form__link {
+            margin-top: theme.extent(2);
+        }
+    }
+}

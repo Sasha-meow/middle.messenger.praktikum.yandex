@@ -1,0 +1,25 @@
+<form class="{{ styles.primary-form }} {{ classForm }}">
+    <h2 class="{{ styles.primary-form__title }}">
+        {{ title }}
+    </h2>
+    {{#if imageProps}}
+        <img
+            class="{{ styles.primary-form__image }} {{ imageClass }}"
+            src="{{ imageProps }}"
+            alt="form-img"
+        />
+    {{/if}}
+    {{#if fields}}
+        {{#each fields}}
+            {{> input fieldProps }}
+        {{/each}}
+    {{/if}}
+    <div class="{{ styles.primary-form__buttons-container }}">
+        {{> button buttonProps }}
+        {{#if navlinkProps}}
+            <div class="{{ styles.primary-form__link }}">
+                {{> navlink navlinkProps }}
+            </div>
+        {{/if}}
+    </div>
+</form>

@@ -1,0 +1,53 @@
+@use "./theme.scss";
+@import "./colors.scss";
+@import "./mixins.scss";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: $base-font;
+    color: $usual;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../static/images/bg-main.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+#app {
+    height: 100%;
+}
+
+.rounded {
+    border-radius: 50%;
+}
+
+.bg-dark {
+    background-color: $dark;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.centered-container {
+    @include flexCol;
+    @include flexCenter;
+    height: 100%;
+}
+
+.customForm {
+    width: 340px;
+    box-shadow: $primary-box-shadow;
+    border-radius: $border-radius-base;
+}
+
+.flex-block {
+    height: 100%;
+    display: flex;
+}

@@ -1,0 +1,16 @@
+@use "../../styles/theme.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
+.centered-container__module {
+    @include flexCenter;
+
+    .centered-container__centered-block {
+        padding: theme.extent(1.5);
+        border-radius: $border-radius-base;
+    }
+    
+    .centered-container__link {
+        margin-top: theme.extent(2);
+    }
+}

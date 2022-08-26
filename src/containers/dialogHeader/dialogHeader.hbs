@@ -1,0 +1,12 @@
+<div class="{{ styles.dialog-header }}">
+    <div class="{{ styles.dialog-header__avatar-box }}">
+        {{> avatar avatarProps}}
+        <h2 class="{{ styles.dialog-header__name }}">
+            {{ dialogName }}
+        </h2>
+    </div>
+    <div class="dialog-header__menu-items">
+        <img class="{{ styles.dialog-header__menu-items__add }}" src="{{ addIcon }}" alt="add" />
+        <img class="{{ styles.dialog-header__menu-items__delete }}" src="{{ deleteIcon }}" alt="delete" />
+    </div>
+</div>

@@ -1,0 +1,53 @@
+@use "../../styles/theme.scss";
+@import "../../styles/colors.scss";
+
+.primary-input {
+    height: theme.extent(4);
+    background-color: $dark-black;
+    color: $usual;
+    border-radius: $border-radius-base;
+    border: $border-grey;
+    padding: theme.extent();
+
+    &::placeholder {
+        color: $grey;
+    }
+
+    &:hover,
+    &:focus {
+        border: $border-light;
+    }
+
+    &:focus-visible {
+        outline: transparent;
+    }
+
+    &:disabled {
+        color: $grey;
+        border: $grey;
+    }
+
+    &.with-prefix {
+        padding-left: theme.extent(3) + 6px;
+    }
+
+    &.with-postfix {
+        padding-right: theme.extent(4);
+    }
+}
+
+.primary-input__prefix {
+    position: absolute;
+    height: theme.extent(4);
+    padding: theme.extent();
+}
+
+.primary-label {
+    visibility: hidden;
+    font-size: $font-size-xs;
+    padding-left: theme.extent();
+}
+
+.search-block, .send-block {
+    margin-right: theme.extent(2);
+}

@@ -1,0 +1,18 @@
+@use "../../styles/theme.scss";
+@import "../../styles/colors.scss";
+
+.legend-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: theme.extent(2);
+
+    .legend-block__text {
+        color: $dark;
+        margin: 0 theme.extent(2);
+    }
+
+    .legend-block__line {
+        width: 45%;
+        border-bottom: $border-bright;
+    }
+}

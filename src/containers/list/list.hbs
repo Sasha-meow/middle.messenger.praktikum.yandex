@@ -1,0 +1,8 @@
+<div class="{{ styles.list }}">
+    {{> searchBlock searchProps }}
+    {{#if chatItems}}
+        {{#each chatItems}}
+            {{> item chatProps }}
+        {{/each}}
+    {{/if}}
+</div>

@@ -1,0 +1,17 @@
+<div class="centered-container {{ styles.centered-container__module }}">
+    <div class="bg-dark {{ styles.centered-container__centered-block }}">
+        {{#if centeredTitle}}
+            <h2>
+                {{ centeredTitle }}
+            </h2>
+        {{/if}}
+        <p>
+            {{ centeredContent }}
+        </p>
+    </div>
+    <div class="{{ styles.centered-container__link }}">
+        {{#if navlinkProps}}
+            {{> navlink navlinkProps }}
+        {{/if}}
+    </div>
+</div>
