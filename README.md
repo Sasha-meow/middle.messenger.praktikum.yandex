@@ -19,9 +19,12 @@
 
 ### Установка
 
-`npm install` - установка зависимостей
-`npm run dev` - запуск dev-версии на Parcel
-`npm run start` - запуск версии на Express
+`npm install` - установка зависимостей  
+
+`npm run dev` - запуск dev-версии на Parcel  
+
+`npm run start` - запуск версии на Express  
+
 
 ### Технологии
 
