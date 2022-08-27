@@ -23,11 +23,11 @@ export const formConfig = {
         buttonProps: {
             type: "submit",
             label: "Sign in",
-            btnClass: "light",
+            btnClass: "sign-in",
         },
-        navlinkProps: {
-            navlinkHref: "/register",
-            navlinkText: "Sign up",
+        linkProps: {
+            linkHref: "/register",
+            linkText: "Sign up",
         },
     }
 };

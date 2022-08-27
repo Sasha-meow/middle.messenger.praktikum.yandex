@@ -36,9 +36,13 @@
     }
 }
 
-.primary-input__prefix {
+.primary-input__prefix,
+.primary-input__postfix {
     position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
     height: theme.extent(4);
+    width: theme.extent(4);
     padding: theme.extent();
 }
 

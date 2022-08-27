@@ -54,7 +54,7 @@ export const formConfig = {
         buttonProps: {
             type: "submit",
             label: "Sign up",
-            btnClass: "light",
+            btnClass: "sign-up",
         },
     }
 };

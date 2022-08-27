@@ -1,7 +1,7 @@
 <form class="{{ styles.primary-form }} {{ classForm }}">
-    <h2 class="{{ styles.primary-form__title }}">
+    <h1 class="{{ styles.primary-form__title }}">
         {{ title }}
-    </h2>
+    </h1>
     {{#if imageProps}}
         <img
             class="{{ styles.primary-form__image }} {{ imageClass }}"
@@ -16,9 +16,9 @@
     {{/if}}
     <div class="{{ styles.primary-form__buttons-container }}">
         {{> button buttonProps }}
-        {{#if navlinkProps}}
+        {{#if linkProps}}
             <div class="{{ styles.primary-form__link }}">
-                {{> navlink navlinkProps }}
+                {{> navlink linkProps }}
             </div>
         {{/if}}
     </div>

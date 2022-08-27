@@ -4,23 +4,8 @@
 .primary-btn {
     cursor: pointer;
     border: $border-light;
-
-    &.light {
-        background-color: $usual;
-        color: $dark;
-        border-radius: $border-radius-base * 2;
-        padding: theme.extent() theme.extent(4);
-    }
-
-    &.dark {
-        background-color: $dark;
-        color: $usual;
-        border-radius: $border-radius-base;
-    }
-
-    &.send-button,
-    &.add-button {
-        width: theme.extent(4);
-        height: theme.extent(4);
-    }
+    background-color: $usual;
+    color: $dark;
+    border-radius: $border-radius-base * 2;
+    padding: theme.extent() theme.extent(4);
 }
