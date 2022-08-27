@@ -4,9 +4,8 @@
   "description": "Hometask project",
   "scripts": {
     "dev": "parcel src/layout/index.html",
-    "start": "parcel src/layout/index.html -p 3000",
-    "build": "parcel build src/layout/index.html",
-    "server": "node ./server.js"
+    "start": "parcel src/layout/index.html -p 3000 && node ./server.js",
+    "build": "parcel build src/layout/index.html"
   },
   "repository": {
     "type": "git",

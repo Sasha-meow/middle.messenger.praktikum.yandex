@@ -3,4 +3,9 @@
 .list {
     @include flexCol;
     justify-content: center;
+
+    .list__ul {
+        list-style: none;
+        padding: 0;
+    }
 }

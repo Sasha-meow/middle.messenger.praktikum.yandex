@@ -1,8 +1,12 @@
 <div class="{{ styles.list }}">
     {{> searchBlock searchProps }}
     {{#if chatItems}}
-        {{#each chatItems}}
-            {{> item chatProps }}
-        {{/each}}
+        <ul class="{{ styles.list__ul }}">
+            {{#each chatItems}}
+                <li class="{{ styles.list__ul-item }}">
+                    {{> item chatProps }}
+                </li>
+            {{/each}}
+        </ul>
     {{/if}}
 </div>

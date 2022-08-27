@@ -1,4 +1,5 @@
 @use "./theme.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import "./colors.scss";
 @import "./mixins.scss";
 
@@ -8,7 +9,7 @@
 }
 
 body {
-    font-family: $base-font;
+    font-family: "Roboto", sans-serif;
     color: $usual;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../static/images/bg-main.jpg);
     background-size: cover;
@@ -41,7 +42,7 @@ body {
     height: 100%;
 }
 
-.customForm {
+.custom-form {
     width: 340px;
     box-shadow: $primary-box-shadow;
     border-radius: $border-radius-base;
