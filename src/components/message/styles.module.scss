@@ -1,0 +1,27 @@
+@use "../../styles/theme.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
+.message-block {
+    @include flexCol;
+    max-width: theme.extent(53);
+    margin-bottom: theme.extent();
+    padding: theme.extent(2) theme.extent(2) theme.extent();
+    justify-content: start;
+    border-radius: $border-radius-base;
+
+    &.self {
+        align-self: end;
+    }
+
+    &.receiver {
+        align-self: start;
+    }
+
+    .message-block__time {
+        display: flex;
+        align-self: end;
+        color: $grey;
+        margin-top: theme.extent();
+    }
+}

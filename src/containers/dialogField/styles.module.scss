@@ -1,0 +1,9 @@
+@use "../../styles/theme.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/colors.scss";
+
+.dialog-form {
+    display: flex;
+    margin-top: auto;
+    padding: theme.extent(4);
+}

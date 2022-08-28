@@ -1,0 +1,23 @@
+<div class="w-100 {{ styles.primary-input__block }} {{ moduleBlock }}">
+    {{#if hasLabel}}
+        <label
+            for="{{ fieldName }}"
+            class="{{ styles.primary-label }}"
+        >
+            {{ customPlaceholder }}
+        </label>
+    {{/if}}
+    {{#if prefixIcon}}
+        <div class="{{ styles.primary-input__prefix }}" style="background-image: url({{ prefixIcon }})"></div>
+    {{/if}}
+    <input
+        id="{{ fieldName }}"
+        type={{ fieldType }}
+        class="w-100 {{ styles.primary-input }} {{ moduleClass }}"
+        name={{ fieldName }}
+        placeholder={{ customPlaceholder }}
+    >
+    {{#if postfixIcon}}
+        <div class="{{ styles.primary-input__postfix }}" style="background-image: url({{ postfixIcon }})"></div>
+    {{/if}}
+</div>

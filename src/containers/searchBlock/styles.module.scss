@@ -1,0 +1,14 @@
+@use "../../styles/theme.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
+.list__search-form {
+    display: flex;
+    align-items: center;
+    padding: 0 theme.extent(2) theme.extent(3);
+
+    .add-button {
+        width: 32px;
+        height: 32px;
+    }
+}

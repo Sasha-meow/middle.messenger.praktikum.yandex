@@ -1,0 +1,23 @@
+<div class="w-100 {{ styles.list__item }}">
+    <div class="{{ styles.list__item-avatar }}">
+        {{> avatar avatarProps }}
+    </div>
+    <div class="w-100 {{ styles.list__item-text }}">
+        <div class="{{ styles.list__item-name__block }}">
+            <h2 class="{{ styles.list__item-name }}">
+                {{ name }}
+            </h2>
+            {{#if badgeProps}}
+                {{> badge badgeProps }}
+            {{/if}}
+        </div>
+        <div class="{{ styles.list__item-preview }}">
+            {{#if self}}
+                <span class="{{ styles.list__item-receiver }}">
+                    You:
+                </span>
+            {{/if}}
+            {{ preview }}
+        </div>      
+    </div>
+</div>

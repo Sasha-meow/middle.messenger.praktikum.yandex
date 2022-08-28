@@ -1,0 +1,8 @@
+@use "../../styles/theme.scss";
+@import "../../styles/colors.scss";
+
+.list__badge {
+    background-color: $grey;
+    height: theme.extent(3);
+    padding: theme.extent(0.5) theme.extent();
+}

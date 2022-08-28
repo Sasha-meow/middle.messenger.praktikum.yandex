@@ -1,0 +1,11 @@
+@use "../../styles/theme.scss";
+@import "../../styles/colors.scss";
+
+.primary-btn {
+    cursor: pointer;
+    border: $border-light;
+    background-color: $usual;
+    color: $dark;
+    border-radius: $border-radius-base * 2;
+    padding: theme.extent() theme.extent(4);
+}

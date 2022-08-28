@@ -1,0 +1,11 @@
+@use "../../styles/theme.scss";
+
+.profile__avatar {
+    width: theme.extent(8);
+    height: theme.extent(8);
+
+    &.xl {
+        width: theme.extent(15);
+        height: theme.extent(15);
+    }
+}

@@ -1,0 +1,37 @@
+@use "../../styles/theme.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/colors.scss";
+
+.list__item {
+    display: flex;
+    cursor: pointer;
+    padding: theme.extent(2);
+    background-color: $dark-black;
+
+    .list__item-avatar {
+        margin-right: theme.extent(3);
+    }
+
+    .list__item-text {
+        @include flexCol;
+
+        .list__item-name__block {
+            display: flex;
+            align-items: baseline;
+
+            .list__item-name {
+                margin-right: theme.extent(0.5);
+                margin-bottom: theme.extent();
+            }
+        }
+
+        .list__item-preview {
+            width: 80%;
+            max-height: theme.extent(3);
+
+            .list__item-receiver {
+                color: $grey;
+            }
+        }
+    }
+}
