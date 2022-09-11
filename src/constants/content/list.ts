@@ -198,9 +198,6 @@ export const listPageProps: IListPage = {
                 name: "message",
                 inputProps: {
                     type: "text",
-                    events: {
-                        blur: () => console.log("gg"),
-                    },
                 },
             }),
         }),

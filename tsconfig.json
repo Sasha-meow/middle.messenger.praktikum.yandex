@@ -12,12 +12,12 @@
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "skipLibCheck": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
       
-    "lib": [
-      "ESNext",
-      "DOM",
-    ],
+    "lib": ["ESNext", "DOM"],
 
-    "exclude": ["node_modules", "dist", ".parcel-cache", "server.js", ".github", "*.scss"],
+    "exclude": ["node_modules", "dist", ".parcel-cache", "server.js", ".github"]
   }
 }

@@ -16,6 +16,7 @@ export class Field extends Block<IField> {
             hasPostfix: !!this.props.postfixIcon,
             events: {
                 blur: this.handleValidate.bind(this),
+                focus: this.handleValidate.bind(this),
                 input: this.handleValidate.bind(this),
             },
         });
