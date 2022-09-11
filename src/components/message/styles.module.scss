@@ -1,20 +1,21 @@
-@use "../../styles/theme.scss";
-@import "../../styles/colors.scss";
-@import "../../styles/mixins.scss";
+@use "../../styles/theme";
+@import "../../styles/colors";
+@import "../../styles/mixins";
 
 .message-block {
     @include flexCol;
+
     max-width: theme.extent(53);
     margin-bottom: theme.extent();
     padding: theme.extent(2) theme.extent(2) theme.extent();
     justify-content: start;
     border-radius: $border-radius-base;
 
-    &.self {
+    &[type="self"] {
         align-self: end;
     }
 
-    &.receiver {
+    &[type="receiver"] {
         align-self: start;
     }
 

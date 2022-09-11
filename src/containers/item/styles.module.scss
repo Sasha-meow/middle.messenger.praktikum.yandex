@@ -1,6 +1,6 @@
-@use "../../styles/theme.scss";
-@import "../../styles/mixins.scss";
-@import "../../styles/colors.scss";
+@use "../../styles/theme";
+@import "../../styles/mixins";
+@import "../../styles/colors";
 
 .list__item {
     display: flex;

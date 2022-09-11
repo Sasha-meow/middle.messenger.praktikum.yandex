@@ -1,0 +1,8 @@
+@use "../../styles/theme";
+@import "../../styles/colors";
+
+.error-message {
+    position: absolute;
+    color: $danger;
+    font-size: $font-size-xs;
+}

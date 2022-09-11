@@ -1,5 +1,5 @@
-@use "../../styles/theme.scss";
-@import "../../styles/colors.scss";
+@use "../../styles/theme";
+@import "../../styles/colors";
 
 .primary-input {
     height: theme.extent(4);
@@ -34,24 +34,11 @@
     &.with-postfix {
         padding-right: theme.extent(4);
     }
-}
 
-.primary-input__prefix,
-.primary-input__postfix {
-    position: absolute;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: theme.extent(4);
-    width: theme.extent(4);
-    padding: theme.extent();
-}
-
-.primary-label {
-    visibility: hidden;
-    font-size: $font-size-xs;
-    padding-left: theme.extent();
-}
-
-.search-block, .send-block {
-    margin-right: theme.extent(2);
+    &:focus ~ [id="label-input"],
+    &:not(:placeholder-shown) ~ [id="label-input"] {
+        font-size: $font-size-xs;
+        color: $usual;
+        transform: translateY(-1 * theme.extent(3));
+    }
 }

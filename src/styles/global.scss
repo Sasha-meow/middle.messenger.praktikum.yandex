@@ -1,7 +1,7 @@
-@use "./theme.scss";
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import "./colors.scss";
-@import "./mixins.scss";
+@use "./theme";
+@import "https://fonts.googleapis.com/css2?family=Roboto&display=swap";
+@import "./colors";
+@import "./mixins";
 
 * {
     box-sizing: border-box;
@@ -9,9 +9,9 @@
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: Roboto, sans-serif;
     color: $usual;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../static/images/bg-main.jpg);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 30%), rgba(0, 0, 0, 30%)), url("../../static/images/bg-main.jpg");
     background-size: cover;
     height: 100vh;
 }
@@ -39,6 +39,7 @@ body {
 .centered-container {
     @include flexCol;
     @include flexCenter;
+
     height: 100%;
 }
 
@@ -51,4 +52,13 @@ body {
 .flex-block {
     height: 100%;
     display: flex;
+}
+
+.invalid-input {
+    color: $danger;
+    border-color: $danger;
+}
+
+.primary-form__input {
+    margin-bottom: theme.extent(5);
 }

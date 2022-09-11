@@ -1,9 +1,10 @@
-@use "../../styles/theme.scss";
-@import "../../styles/mixins.scss";
+@use "../../styles/theme";
+@import "../../styles/mixins";
 
 .primary-form {
     @include flexCol;
     @include flexCenter;
+
     padding: theme.extent(7) theme.extent(4);
 
     .primary-form__title {
@@ -18,6 +19,7 @@
     .primary-form__buttons-container {
         @include flexCol;
         @include flexCenter;
+
         margin-top: theme.extent(6);
 
         .primary-form__link {

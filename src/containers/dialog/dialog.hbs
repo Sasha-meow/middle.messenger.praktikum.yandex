@@ -1,12 +1,12 @@
 <div class="w-100 {{ styles.dialog-wrapper }}">
-    {{> dialogHeader headerProps }}
+    {{{ header }}}
     <div class="{{ styles.dialog-wrapper__message-box }}">
         {{#if messages}}
-            {{> legend propsLegend}}
+            {{!-- {{{ legend }}} --}}
             {{#each messages}}
-                {{> message propsMessage }}
+                {{{ this }}}
             {{/each}}
         {{/if}}
     </div>
-    {{> dialogField fieldProps }}
+    {{{ field }}}
 </div>

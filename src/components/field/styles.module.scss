@@ -1,0 +1,30 @@
+@use "../../styles/theme";
+@import "../../styles/colors";
+
+.primary-input__block {
+    position: relative;
+}
+
+.primary-input__prefix,
+.primary-input__postfix {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: theme.extent(4);
+    width: theme.extent(4);
+    padding: theme.extent();
+}
+
+.primary-label {
+    position: absolute;
+    top: theme.extent() - 2px;
+    left: theme.extent();
+    color: $grey;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.search-block,
+.send-block {
+    margin-right: theme.extent(2);
+}
