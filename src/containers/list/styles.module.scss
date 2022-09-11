@@ -1,7 +1,8 @@
-@import "../../styles/mixins.scss";
+@import "../../styles/mixins";
 
 .list {
     @include flexCol;
+
     justify-content: center;
 
     .list__ul {

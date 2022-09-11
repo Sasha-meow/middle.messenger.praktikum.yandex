@@ -2,23 +2,23 @@
     <h1 class="{{ styles.primary-form__title }}">
         {{ title }}
     </h1>
-    {{#if imageProps}}
+    {{#if imageSrc}}
         <img
-            class="{{ styles.primary-form__image }} {{ imageClass }}"
-            src="{{ imageProps }}"
+            class="{{ styles.primary-form__image }} {{ classImage }}"
+            src="{{ imageSrc }}"
             alt="form-img"
         />
     {{/if}}
-    {{#if fields}}
-        {{#each fields}}
-            {{> input fieldProps }}
-        {{/each}}
-    {{/if}}
+    {{#each fields}}
+        <div class="w-100 primary-form__input">
+            {{{ this }}}
+        </div>
+    {{/each}}
     <div class="{{ styles.primary-form__buttons-container }}">
-        {{> button buttonProps }}
-        {{#if linkProps}}
+        {{{ button }}}
+        {{#if link}}
             <div class="{{ styles.primary-form__link }}">
-                {{> navlink linkProps }}
+                {{{ link }}}
             </div>
         {{/if}}
     </div>

@@ -1,0 +1,21 @@
+{
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-standard-scss"
+    ],
+    "rules": {
+        "color-hex-case": "lower",
+        "max-nesting-depth": 10,
+        "indentation": 4,
+        "function-no-unknown": null,
+        "selector-class-pattern": null,
+        "scss/at-mixin-pattern": null,
+        "color-function-notation": null,
+        "length-zero-no-unit": null
+    },
+    "ignoreFiles": [
+      "build/*",
+      "node_modules/*",
+      "dist/*"
+    ]
+  }

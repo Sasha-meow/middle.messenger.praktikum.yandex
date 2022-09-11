@@ -1,0 +1,12 @@
+@use "../../styles/theme";
+@import "../../styles/colors";
+
+.primary-navlink {
+    color: $grey;
+    text-decoration: underline;
+
+    &:hover,
+    &:visited {
+        color: $usual-bright;
+    }
+}

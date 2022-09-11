@@ -1,6 +1,6 @@
-@use "../../styles/theme.scss";
-@import "../../styles/colors.scss";
-@import "../../styles/mixins.scss";
+@use "../../styles/theme";
+@import "../../styles/colors";
+@import "../../styles/mixins";
 
 .sidebar__header {
     @include flexCol;

@@ -1,0 +1,19 @@
+<div class="w-100 {{ styles.primary-input__block }} {{ classBlock }}">
+    {{#if prefixIcon}}
+        <div class="{{ styles.primary-input__prefix }}" style="background-image: url({{ prefixIcon }})"></div>
+    {{/if}}
+    {{{ input }}}
+    {{#if hasLabel}}
+        <label
+            id="label-input"
+            for="{{ name }}"
+            class="{{ styles.primary-label }}"
+        >
+            {{ placeholder }}
+        </label>
+    {{/if}}
+    {{#if postfixIcon}}
+        <div class="{{ styles.primary-input__postfix }}" style="background-image: url({{ postfixIcon }})"></div>
+    {{/if}}
+    {{{ error }}}
+</div>
