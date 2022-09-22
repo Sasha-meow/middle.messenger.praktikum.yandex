@@ -1,33 +1,29 @@
-enum METHODS {
+import { queryStringify } from "./queryStringify";
+
+enum Methods {
     GET = "GET",
     POST = "POST",
     PUT = "PUT",
     DELETE = "DELETE",
 }
 
-export const queryStringify = (data: Record<string, string | number | Array<string | number>>) => {
-    const keys = Object.keys(data);
-
-    return keys.reduce((result, key, index) => {
-        return `${result}${key}=${data[key]}${index < keys.length - 1 ? "&" : ""}`;
-    }, "?");
-};
-
 export default class HTTPTransport {
     get = (url: string, options: IRequestOptions = {}) => {
-        return this.request(url, { ...options, method: METHODS.GET }, options.timeout);
+        const resultUrl = !!options.data ? `${url}${queryStringify(options.data)}` : url;
+
+        return this.request(resultUrl, { ...options, method: Methods.GET }, options.timeout);
     };
 
     post = (url: string, options: IRequestOptions = {}) => {
-        return this.request(url, { ...options, method: METHODS.POST }, options.timeout);
+        return this.request(url, { ...options, method: Methods.POST }, options.timeout);
     };
 
     put = (url: string, options: IRequestOptions = {}) => {
-        return this.request(url, { ...options, method: METHODS.PUT }, options.timeout);
+        return this.request(url, { ...options, method: Methods.PUT }, options.timeout);
     };
 
     delete = (url: string, options: IRequestOptions = {}) => {
-        return this.request(url, { ...options, method: METHODS.DELETE }, options.timeout);
+        return this.request(url, { ...options, method: Methods.DELETE }, options.timeout);
     };
 
     request = (url: string, options: IRequestOptions = {}, timeout = 3000): Promise<XMLHttpRequest> => {
@@ -41,7 +37,7 @@ export default class HTTPTransport {
 
             const xhr = new XMLHttpRequest();
 
-            xhr.open(method, method === METHODS.GET && !!data ? `${url}${queryStringify(data)}` : url);
+            xhr.open(method, url);
 
             xhr.timeout = timeout;
 
@@ -57,7 +53,7 @@ export default class HTTPTransport {
             xhr.onerror = reject;
             xhr.ontimeout = reject;
 
-            if (method === METHODS.GET || !data) {
+            if (method === Methods.GET || !data) {
                 xhr.send();
             } else {
                 xhr.send(data);
