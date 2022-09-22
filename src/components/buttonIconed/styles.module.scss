@@ -1,5 +1,5 @@
-@use "../../styles/theme.scss";
-@import "../../styles/colors.scss";
+@use "../../styles/theme";
+@import "../../styles/colors";
 
 .iconed-btn {
     cursor: pointer;
@@ -7,12 +7,12 @@
     border: none;
     padding: 0;
 
-    &.xs {
+    &[data-size="xs"] {
         width: theme.extent(2);
         height: theme.extent(2);
     }
 
-    &.xl {
+    &[data-size="xl"] {
         width: theme.extent(4);
         height: theme.extent(4);
     }

@@ -1,12 +1,14 @@
-@use "../../styles/theme.scss";
-@import "../../styles/mixins.scss";
+@use "../../styles/theme";
+@import "../../styles/mixins";
 
 .dialog-wrapper {
     @include flexCol;
+
     height: 100%;
 
     .dialog-wrapper__message-box {
         @include flexCol;
+
         overflow-y: auto;
         padding: theme.extent(4) theme.extent(3);
     }

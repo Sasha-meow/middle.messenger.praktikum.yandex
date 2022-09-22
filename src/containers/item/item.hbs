@@ -1,14 +1,14 @@
 <div class="w-100 {{ styles.list__item }}">
     <div class="{{ styles.list__item-avatar }}">
-        {{> avatar avatarProps }}
+        {{{ avatar }}}
     </div>
     <div class="w-100 {{ styles.list__item-text }}">
         <div class="{{ styles.list__item-name__block }}">
             <h2 class="{{ styles.list__item-name }}">
                 {{ name }}
             </h2>
-            {{#if badgeProps}}
-                {{> badge badgeProps }}
+            {{#if badge}}
+                {{{ badge }}}
             {{/if}}
         </div>
         <div class="{{ styles.list__item-preview }}">

@@ -1,6 +1,6 @@
-@use "../../styles/theme.scss";
-@import "../../styles/colors.scss";
-@import "../../styles/mixins.scss";
+@use "../../styles/theme";
+@import "../../styles/colors";
+@import "../../styles/mixins";
 
 .centered-container__module {
     @include flexCenter;
@@ -9,7 +9,7 @@
         padding: theme.extent(1.5);
         border-radius: $border-radius-base;
     }
-    
+
     .centered-container__link {
         margin-top: theme.extent(2);
     }

@@ -1,13 +1,13 @@
 <div class="{{ styles.dialog-header }}">
     <div class="{{ styles.dialog-header__avatar-box }}">
-        {{> avatar avatarProps}}
+        {{{ avatar }}}
         <h1 class="{{ styles.dialog-header__name }}">
-            {{ dialogName }}
+            {{ title }}
         </h1>
     </div>
     <div class="dialog-header__menu-items">
-        {{#each icons}}
-            {{> buttonIconed iconProps}}
+        {{#each buttons}}
+            {{{ this }}}
         {{/each}}
     </div>
 </div>
