@@ -1,5 +1,5 @@
 import Block from "../../utils/block";
-import template from "./item.hbs";
+import template from "./modal.hbs";
 import { ButtonIconed } from "../../components/buttonIconed";
 import { IModal } from "./types";
 import cancelIcon from "../../../static/images/cancel-icon.svg";
@@ -7,16 +7,21 @@ import * as styles from "./styles.module.scss";
 
 export class Modal extends Block<IModal> {
     init() {
-        this.children.button = new ButtonIconed({
+        this.children.button = this.createRemoveButton();
+    }
+
+    createRemoveButton() {
+        return new ButtonIconed({
             icon: cancelIcon,
             type: "button",
             size: "xl",
             events: {
-                click: () => this.hide(),
+                click: () => this.remove(),
             },
         });
     }
+
     render() {
-        return this.compile(template, { ...this.props, styles });
+        return this.compile(template, { ...this.props, styles, isArray: this.children.content instanceof Array });
     }
 }

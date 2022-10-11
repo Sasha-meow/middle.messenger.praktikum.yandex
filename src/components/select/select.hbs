@@ -1,0 +1,12 @@
+<div class="w-100 {{ styles.select-block }}">
+    {{{ input }}}
+    {{#if options}}
+        {{#each options}}
+            {{{ this }}}
+        {{/each}}
+    {{else}}
+        <p class="{{ styles.select-block__no-data }}">
+            No users
+        </p>
+    {{/if}}
+</div>

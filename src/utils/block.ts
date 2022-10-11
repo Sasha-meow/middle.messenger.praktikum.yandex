@@ -1,6 +1,7 @@
 import EventBus from "./eventBus";
 import { nanoid } from "nanoid";
 import { TemplateDelegate } from "handlebars";
+import { debounce } from "./debounce";
 
 export default class Block<T = {}> {
     static EVENTS = {
@@ -12,7 +13,7 @@ export default class Block<T = {}> {
 
     public id: string = nanoid(6);
     protected props: Record<string, any>;
-    protected children: Record<string, Block>;
+    protected children: Record<string, Block | Block[]>;
     private eventBus: () => EventBus;
     private _element: HTMLElement | null = null;
 
@@ -38,12 +39,15 @@ export default class Block<T = {}> {
     }
 
     private _getChildrenAndProps(childrenAndProps: any = {}) {
-        const props: Record<string, any> = {};
-        const children: Record<string, any> = {};
+        const props: Record<string, unknown> = {};
+        const children: Record<string, Block | Block[]> = {};
 
         Object.entries(childrenAndProps).forEach(([key, value]) => {
-            if (Array.isArray(value) || value instanceof Block) {
-                children[key] = value;
+            if (
+                (Array.isArray(value) && value.length > 0 && value.every((v) => v instanceof Block)) ||
+                value instanceof Block
+            ) {
+                children[key as string] = value;
             } else {
                 props[key] = value;
             }
@@ -83,6 +87,14 @@ export default class Block<T = {}> {
 
     public dispatchComponentDidMount() {
         this.eventBus().emit(Block.EVENTS.FLOW_CDM);
+
+        Object.values(this.children).forEach((child) => {
+            if (Array.isArray(child)) {
+                child.forEach((ch) => ch.dispatchComponentDidMount());
+            } else {
+                child.dispatchComponentDidMount();
+            }
+        });
     }
 
     private _componentDidUpdate(oldProps: any, newProps: any) {
@@ -92,7 +104,7 @@ export default class Block<T = {}> {
     }
 
     protected componentDidUpdate(oldProps: any, newProps: any) {
-        return true;
+        return oldProps === newProps;
     }
 
     public setProps = (nextProps: any) => {
@@ -124,13 +136,7 @@ export default class Block<T = {}> {
 
         Object.entries(this.children).forEach(([name, component]) => {
             if (Array.isArray(component)) {
-                component.forEach((item) => {
-                    if (!contextAndStubs[name]) {
-                        contextAndStubs[name] = [];
-                    }
-
-                    contextAndStubs[name].push(`<div data-id="${item.id}"></div>`);
-                });
+                contextAndStubs[name] = component.map((child) => `<div data-id="${child.id}"></div>`);
             } else {
                 contextAndStubs[name] = `<div data-id="${component.id}"></div>`;
             }
@@ -142,25 +148,23 @@ export default class Block<T = {}> {
 
         temp.innerHTML = html;
 
-        Object.values(this.children).forEach((component) => {
+        const replaceStub = (component: Block) => {
+            const stub = temp.content.querySelector(`[data-id="${component.id}"]`);
+
+            if (!stub) {
+                return;
+            }
+
+            component.getContent()?.append(...Array.from(stub.childNodes));
+
+            stub.replaceWith(component.getContent()!);
+        };
+
+        Object.entries(this.children).forEach(([_, component]) => {
             if (Array.isArray(component)) {
-                component.forEach((item) => {
-                    const childStub = temp.content.querySelector(`[data-id="${item.id}"]`);
-
-                    if (!childStub) {
-                        return;
-                    }
-
-                    childStub.replaceWith(item.getContent()!);
-                });
+                component.forEach(replaceStub);
             } else {
-                const stub = temp.content.querySelector(`[data-id="${component.id}"]`);
-
-                if (!stub) {
-                    return;
-                }
-
-                stub.replaceWith(component.getContent()!);
+                replaceStub(component);
             }
         });
 
@@ -178,6 +182,10 @@ export default class Block<T = {}> {
     private _makePropsProxy(props: Record<string, any>) {
         const self = this;
 
+        const debounced = debounce((oldTarget: Record<string, any>, target: Record<string, any>) => {
+            self.eventBus().emit(Block.EVENTS.FLOW_CDU, oldTarget, target);
+        }, 1);
+
         return new Proxy(props, {
             get(target, prop: string) {
                 const value = target[prop];
@@ -188,7 +196,7 @@ export default class Block<T = {}> {
                 const oldTarget = { ...target };
                 target[prop] = value;
 
-                self.eventBus().emit(Block.EVENTS.FLOW_CDU, oldTarget, target);
+                debounced(oldTarget, target);
 
                 return true;
             },
@@ -205,5 +213,17 @@ export default class Block<T = {}> {
 
     public hide() {
         this.getContent()!.style.display = "none";
+    }
+
+    public append(selector: string) {
+        const root = document.querySelector(selector);
+
+        if (root) {
+            root.append(this.getContent()!);
+        }
+    }
+
+    public remove() {
+        this.getContent()!.remove();
     }
 }

@@ -1,7 +1,7 @@
 import { Link } from "../link";
 
 export interface ICenterText {
-    title: string;
-    content: string;
-    link: Link;
+    title?: string;
+    content?: string;
+    link?: Link;
 }

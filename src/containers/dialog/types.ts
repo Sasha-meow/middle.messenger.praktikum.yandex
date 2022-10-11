@@ -1,9 +1,12 @@
+import { CenterText } from "../../components/centerText";
 import { Message } from "../../components/message";
 import { DialogField } from "../dialogField";
 import { DialogHeader } from "../dialogHeader";
 
 export interface IDialog {
-    header: DialogHeader;
+    header?: typeof DialogHeader;
     messages?: Message[];
-    field: DialogField;
+    field?: typeof DialogField;
+    noChat?: CenterText;
+    noMessages?: CenterText;
 }

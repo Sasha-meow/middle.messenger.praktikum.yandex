@@ -1,14 +1,8 @@
 <form class="{{ styles.primary-form }} {{ classForm }}">
     <h1 class="{{ styles.primary-form__title }}">
         {{ title }}
+        {{{ disableButton }}}
     </h1>
-    {{#if imageSrc}}
-        <img
-            class="{{ styles.primary-form__image }} {{ classImage }}"
-            src="{{ imageSrc }}"
-            alt="form-img"
-        />
-    {{/if}}
     {{#each fields}}
         <div class="w-100 primary-form__input">
             {{{ this }}}

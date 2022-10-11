@@ -1,9 +1,10 @@
 import Block from "../../utils/block";
 import template from "./form.hbs";
-import { IForm } from "./types";
-import * as styles from "./styles.module.scss";
+import { ButtonIconed } from "../../components/buttonIconed";
 import { Button } from "../../components/button";
 import { Field } from "../../components/field";
+import { IForm } from "./types";
+import * as styles from "./styles.module.scss";
 
 export class Form extends Block<IForm> {
     init() {
@@ -13,25 +14,57 @@ export class Form extends Block<IForm> {
                 click: this.handleSubmit.bind(this),
             },
         });
+
+        if (this.props.disableButtonProps) {
+            (this.children.disableButton = new ButtonIconed({
+                ...this.props.disableButtonProps,
+                events: {
+                    click: () => this.handleDisable(),
+                },
+            })),
+                this.handleDisable();
+        }
     }
 
     handleSubmit(e: Event) {
         e.preventDefault();
 
-        let json: Record<string, string> = {};
+        let json: Record<string, any> = {};
         const fieldsArr = this.children.fields;
 
         if (fieldsArr instanceof Array) {
-            fieldsArr.forEach((item: Field) => {
-                item.handleValidate();
+            fieldsArr.forEach((item) => {
+                if (item instanceof Field) {
+                    item.handleValidate();
+                }
+
                 let content = item.getContent()?.querySelector("input");
                 if (content) {
-                    json[content.name] = content.value;
+                    if (content.type === "file") {
+                        json[content.name] = content.files![0];
+                    } else {
+                        json[content.name] = content.value;
+                    }
                 }
             });
         }
 
         console.log(json);
+        this.props.afterSubmit(json);
+    }
+
+    handleDisable() {
+        const fieldsArr = this.children.fields as Field[];
+        const button = this.children.button as Button;
+        let isDisabled: boolean = false;
+
+        button.setDisabled();
+
+        fieldsArr.forEach((item: Field) => {
+            isDisabled = item.setDisabled();
+        });
+
+        return isDisabled;
     }
 
     render() {
