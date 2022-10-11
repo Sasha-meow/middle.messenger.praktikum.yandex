@@ -11,11 +11,6 @@
         margin-bottom: theme.extent(4);
     }
 
-    .primary-form__image {
-        height: theme.extent(15);
-        margin-bottom: theme.extent(2);
-    }
-
     .primary-form__buttons-container {
         @include flexCol;
         @include flexCenter;

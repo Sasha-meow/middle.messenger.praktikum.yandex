@@ -1,6 +1,7 @@
 <button
     type={{ type }}
     class="{{ class }} {{ styles.primary-btn }}"
+    {{#if disabled}}disabled{{/if}}
 >
     {{ label }}
 </button>

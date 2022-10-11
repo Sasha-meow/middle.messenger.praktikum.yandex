@@ -1,7 +1,8 @@
 import { ButtonIconed } from "../../components/buttonIconed";
 
 export interface IModal {
-    title: string;
+    title?: string;
     button?: ButtonIconed;
     content?: unknown;
+    verticalAlign?: boolean;
 }

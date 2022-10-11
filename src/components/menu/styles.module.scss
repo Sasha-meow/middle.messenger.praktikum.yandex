@@ -1,0 +1,20 @@
+@use "../../styles/theme";
+@import "../../styles/colors";
+
+.menu-wrapper {
+    display: none;
+    position: absolute;
+    right: theme.extent(2);
+    top: theme.extent(12);
+
+    .menu-wrapper__list {
+        list-style: none;
+        padding: theme.extent(0.5);
+
+        .menu-wrapper__list-item {
+            &:not(:last-child) {
+                border-bottom: 1px solid $black;
+            }
+        }
+    }
+}

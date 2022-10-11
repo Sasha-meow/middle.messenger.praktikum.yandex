@@ -4,6 +4,10 @@ import { IError } from "./types";
 import * as styles from "./styles.module.scss";
 
 export class ErrorMessage extends Block<IError> {
+    componentDidUpdate(oldProps: any, newProps: any) {
+        return true;
+    }
+
     render() {
         return this.compile(template, { ...this.props, styles });
     }

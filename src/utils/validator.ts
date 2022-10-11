@@ -4,24 +4,27 @@ export const typeCheck: Record<string, RegExp> = {
     login: /^[A-Za-z][A-Za-z0-9-_]{3,20}$/,
     email: /^[A-Za-z0-9-]+@[A-Za-z]+\.[a-z]+$/,
     password: /^(?=.*\d)(?=.*[A-ZА-ЯЁ]).{8,40}$/,
-    phone: /^\+?d{10,15}$/,
+    oldPassword: /^(?=.*\d)(?=.*[A-ZА-ЯЁ]).{8,40}$/,
+    newPassword: /^(?=.*\d)(?=.*[A-ZА-ЯЁ]).{8,40}$/,
+    phone: /^[+0-9]{10,15}$/,
+    message: /.+/,
 };
 
 export const generalCheck = (name: string, value: string, minLength?: number): Record<string, boolean | string> => {
     const rule = typeCheck[name];
     const title = name.replace("_", " ");
 
-    if (!value) {
-        return {
-            isInvalid: true,
-            error: "Field can`t be empty!",
-        };
-    }
-
     if (!rule) {
         return {
             isInvalid: false,
             error: "",
+        };
+    }
+
+    if (!value) {
+        return {
+            isInvalid: true,
+            error: "Field can`t be empty!",
         };
     }
 

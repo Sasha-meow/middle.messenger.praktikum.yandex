@@ -7,9 +7,11 @@ export interface IInput {
     hasPostfix?: boolean;
     minLength?: string;
     maxLength?: string;
+    accept?: string;
     events?: {
         blur?: (e: Event) => void;
         focus?: (e: Event) => void;
         input?: (e: Event) => void;
+        keypress?: (e: KeyboardEvent) => void;
     };
 }

@@ -1,0 +1,11 @@
+@use "../../styles/theme";
+@import "../../styles/colors";
+
+.nav-item {
+    cursor: pointer;
+    padding: theme.extent() theme.extent(2);
+
+    &:hover {
+        color: $usual-bright;
+    }
+}

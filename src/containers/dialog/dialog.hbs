@@ -1,12 +1,20 @@
 <div class="w-100 {{ styles.dialog-wrapper }}">
-    {{{ header }}}
-    <div class="{{ styles.dialog-wrapper__message-box }}">
-        {{#if messages}}
-            {{!-- {{{ legend }}} --}}
-            {{#each messages}}
-                {{{ this }}}
-            {{/each}}
-        {{/if}}
-    </div>
-    {{{ field }}}
+    {{#if selectedChat}}
+        {{{ header }}}
+        <div class="{{ styles.dialog-wrapper__message-box }}">
+            {{#if messages}}
+                {{!-- {{{ legend }}} --}}
+                {{#each messages}}
+                    {{{ this }}}
+                {{/each}}
+            {{else}}
+                {{{ noMessages }}}
+            {{/if}}
+        </div>
+        {{{ field }}}
+    {{else}}
+        <div class="empty-wrapper m-auto">
+            {{{ noChat }}}
+        </div>
+    {{/if}}
 </div>

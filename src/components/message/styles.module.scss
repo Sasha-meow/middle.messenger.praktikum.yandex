@@ -6,6 +6,7 @@
     @include flexCol;
 
     max-width: theme.extent(53);
+    word-wrap: break-word;
     margin-bottom: theme.extent();
     padding: theme.extent(2) theme.extent(2) theme.extent();
     justify-content: start;

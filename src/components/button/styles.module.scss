@@ -8,4 +8,10 @@
     color: $dark;
     border-radius: $border-radius-base * 2;
     padding: theme.extent() theme.extent(4);
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: $grey;
+        border-color: $grey;
+    }
 }

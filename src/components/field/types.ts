@@ -10,4 +10,5 @@ export interface IField {
     postfixIcon?: string;
     inputProps: IInput;
     error?: ErrorMessage;
+    onSubmit?: (e: any) => void;
 }

@@ -1,0 +1,17 @@
+<div class="bg-dark {{ styles.modal-background }}">
+    <div class="{{ styles.modal-wrapper }}">
+        <div class="{{ styles.cancel-button }}">
+            {{{ button }}}
+        </div>
+        <h1>{{ title }}</h1>
+        {{#if isArray}}
+            <div class="{{ styles.modal-wrapper__content }}">
+                {{#each content}}
+                    {{{ this }}}
+                {{/each}}
+            </div>
+        {{else}}
+            {{{ content }}}
+        {{/if}}
+    </div>
+</div>
