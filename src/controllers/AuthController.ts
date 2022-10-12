@@ -33,9 +33,13 @@ class AuthController {
     }
 
     async fetchUser() {
-        const response = await this.api.read();
+        try {
+            const response = await this.api.read();
 
-        store.set("user", response);
+            store.set("user", response);
+        } catch (e) {
+            handleError("Can`t get user!", true);
+        }
     }
 
     async logout() {

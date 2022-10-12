@@ -1,0 +1,14 @@
+{
+    "exclude": [
+      "node_modules/",
+      "dist/"
+    ],
+    "extension": [
+      "ts"
+    ],
+    "package":"package.json",
+    "require": [
+      "ts-node/register"
+    ],
+    "spec": "src/**/*.test.ts"
+}

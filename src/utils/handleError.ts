@@ -2,7 +2,7 @@ import router from "./router";
 import { Notification } from "../components/notification";
 import { RoutesConfig } from "../constants/constants";
 
-export const handleError = (e: XMLHttpRequest | string | unknown) => {
+export const handleError = (e: XMLHttpRequest | string | unknown, isQuiet?: boolean) => {
     let errorText: string;
     if (e instanceof XMLHttpRequest) {
         errorText = `Error! Request status: ${e.status}. ${e.response?.reason}.`;
@@ -10,17 +10,19 @@ export const handleError = (e: XMLHttpRequest | string | unknown) => {
         if (e.status >= 500) {
             router.go(RoutesConfig.ServerError);
         }
-    } else if (e instanceof String) {
+    } else if (typeof e === "string") {
         errorText = `Error! ${e}`;
     } else {
         errorText = "Error! Unknown error.";
     }
 
-    const error = new Notification({
-        text: errorText,
-        type: "danger",
-    });
-    error.append("#alert-block");
+    if (!isQuiet) {
+        const error = new Notification({
+            text: errorText,
+            type: "danger",
+        });
+        error.append("#alert-block");
+    }
 
-    throw new Error(errorText);
+    console.error(errorText);
 };
