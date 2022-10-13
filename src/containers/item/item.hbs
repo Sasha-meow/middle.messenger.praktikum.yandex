@@ -1,4 +1,4 @@
-<div class="w-100 {{ styles.list__item }}">
+<div class="w-100 {{ styles.list__item }} {{#if isSelected}}{{ styles.selected }}{{/if}}">
     <div class="{{ styles.list__item-avatar }}">
         {{{ avatar }}}
     </div>
@@ -12,11 +12,6 @@
             {{/if}}
         </div>
         <div class="{{ styles.list__item-preview }}">
-            {{#if self}}
-                <span class="{{ styles.list__item-receiver }}">
-                    You:
-                </span>
-            {{/if}}
             {{ preview }}
         </div>      
     </div>

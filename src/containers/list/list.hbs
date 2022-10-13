@@ -1,5 +1,7 @@
 <div class="{{ styles.list }}">
-    {{{ search }}}
+    <div class="{{ styles.list__actions }}">
+        {{{ search }}}
+    </div>
     {{#if items}}
         <ul class="{{ styles.list__ul }}">
             {{#each items}}
@@ -8,5 +10,9 @@
                 </li>
             {{/each}}
         </ul>
+    {{else}}
+        <div class="centered-container">
+            No chats
+        </div>
     {{/if}}
 </div>

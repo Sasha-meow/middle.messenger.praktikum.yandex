@@ -8,6 +8,10 @@
     padding: theme.extent(2);
     background-color: $dark-black;
 
+    &.selected {
+        background-color: $black;
+    }
+
     .list__item-avatar {
         margin-right: theme.extent(3);
     }
@@ -27,6 +31,7 @@
 
         .list__item-preview {
             width: 80%;
+            overflow-x: hidden;
             max-height: theme.extent(3);
 
             .list__item-receiver {

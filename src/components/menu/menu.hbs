@@ -1,0 +1,9 @@
+<div class="bg-dark {{ styles.menu-wrapper }}">
+    <ul class="{{ styles.menu-wrapper__list }}">
+        {{#each navs}}
+            <li class="{{ ../styles.menu-wrapper__list-item }}">
+                {{{ this }}}
+            </li>
+        {{/each}}
+    </ul>
+</div>

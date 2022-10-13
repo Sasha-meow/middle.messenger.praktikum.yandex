@@ -1,3 +1,3 @@
 export interface IBadge {
-    text: string;
+    count: number;
 }

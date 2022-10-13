@@ -1,0 +1,39 @@
+@use "../../styles/theme";
+@import "../../styles/colors";
+
+.notification {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: theme.extent() theme.extent(2);
+    margin-bottom: theme.extent();
+    background-color: $black;
+
+    .notification-content {
+        max-width: 350px;
+    }
+
+    .notification-icon {
+        width: theme.extent(4);
+        height: theme.extent(4);
+        margin-right: theme.extent();
+    }
+
+    &[type="danger"] {
+        border: 1px solid $danger;
+        color: $danger;
+
+        .notification-icon {
+            background: no-repeat url("../../../static/images/error.svg");
+        }
+    }
+
+    &[type="success"] {
+        border: 1px solid $success;
+        color: $success;
+
+        .notification-icon {
+            background: no-repeat url("../../../static/images/success.svg");
+        }
+    }
+}

@@ -16,8 +16,6 @@
     "sourceMap": true,
     "strictNullChecks": true,
       
-    "lib": ["ESNext", "DOM"],
-
-    "exclude": ["node_modules", "dist", ".parcel-cache", "server.js", ".github"]
+    "lib": ["ESNext", "DOM"]
   }
 }
