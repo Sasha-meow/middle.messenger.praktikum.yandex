@@ -1,4 +1,4 @@
-import { Field } from "../components/field";
+import { Field } from "@components/field";
 
 export const createFormFields = (fieldProps: Record<string, any>, values?: any) => {
     return Object.keys(fieldProps).map(

@@ -8,7 +8,8 @@
     ],
     "package":"package.json",
     "require": [
-      "ts-node/register"
+      "ts-node/register",
+      "./mochaSetup.js"
     ],
     "spec": "src/**/*.test.ts"
 }

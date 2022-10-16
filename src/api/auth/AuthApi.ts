@@ -1,5 +1,5 @@
 import BaseAPI from "../BaseApi";
-import { ISignInData, ISignUpData, IUser } from "./types";
+import { ISignInData, ISignUpData } from "./types";
 
 export class AuthAPI extends BaseAPI {
     constructor() {

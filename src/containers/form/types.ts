@@ -1,9 +1,9 @@
-import { IButtonIconed } from "../../components/buttonIconed/types";
-import { ButtonIconed } from "../../components/buttonIconed";
-import { IButton } from "../../components/button/types";
-import { Button } from "../../components/button";
-import { Field } from "../../components/field";
-import { Link } from "../../components/link";
+import { IButtonIconed } from "@components/buttonIconed/types";
+import { ButtonIconed } from "@components/buttonIconed";
+import { IButton } from "@components/button/types";
+import { Button } from "@components/button";
+import { Field } from "@components/field";
+import { Link } from "@components/link";
 
 export interface IForm {
     title?: string;

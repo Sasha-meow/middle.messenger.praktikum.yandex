@@ -1,10 +1,10 @@
-import { IChatsListData } from "../../api/chats/types";
-import { Select } from "../../components/select";
-import { Form } from "../../containers/form";
-import { Modal } from "../../containers/modal";
-import { IModal } from "../../containers/modal/types";
-import ChatsController from "../../controllers/ChatsController";
-import { withSelectedChat } from "../../hocs/withSelectedChat";
+import ChatsController from "@controllers/ChatsController";
+import { IChatsListData } from "@api/chats/types";
+import { Select } from "@components/select";
+import { Form } from "@containers/form";
+import { Modal } from "@containers/modal";
+import { IModal } from "@containers/modal/types";
+import { withSelectedChat } from "@hocs/withSelectedChat";
 
 class AddUsersModalBase extends Modal {
     constructor(props: IModal & { selectedChat: IChatsListData }) {

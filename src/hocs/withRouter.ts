@@ -1,6 +1,6 @@
-import { PropsWithRouter } from "../constants/types/global";
-import Block from "../utils/block";
-import router from "../utils/router";
+import Block from "@utils/block";
+import router from "@utils/router";
+import { PropsWithRouter } from "@constants/types/global";
 
 export const withRouter = (Component: typeof Block<any>) => {
     type Props = typeof Component extends typeof Block<infer P> ? P : any;

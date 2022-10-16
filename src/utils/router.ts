@@ -1,4 +1,5 @@
-import { BlockConstructable } from "../constants/types/global";
+import { BlockConstructable } from "@constants/types/global";
+import { RoutesConfig } from "@constants/constants";
 import { Route } from "./route";
 
 class Router {
@@ -38,8 +39,7 @@ class Router {
         const route = this.getRoute(pathname);
 
         if (!route) {
-            this.go("/not-found");
-            return;
+            return this.go(RoutesConfig.NotFound);
         }
 
         if (this.currentRoute && this.currentRoute !== route) {

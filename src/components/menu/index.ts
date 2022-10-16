@@ -1,14 +1,14 @@
-import ChatsController from "../../controllers/ChatsController";
-import store from "../../utils/store";
-import Block from "../../utils/block";
+import ChatsController from "@controllers/ChatsController";
+import store from "@utils/store";
+import Block from "@utils/block";
 import template from "./menu.hbs";
-import { ChatAvatarModal } from "../../modals/AvatarModal";
-import { DeleteUsersModal } from "../../modals/DeleteUsersModal";
-import { AddUsersModal } from "../../modals/AddUsersModal";
-import { ConfirmModal } from "../../views/confirm";
+import { ChatAvatarModal } from "@modals/AvatarModal";
+import { DeleteUsersModal } from "@modals/DeleteUsersModal";
+import { AddUsersModal } from "@modals/AddUsersModal";
+import { ConfirmModal } from "@views/confirm";
 import { IMenu } from "./types";
 import { Nav } from "../nav";
-import * as styles from "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 export class Menu extends Block<IMenu> {
     init() {

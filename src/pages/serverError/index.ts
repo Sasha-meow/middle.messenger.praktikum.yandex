@@ -1,4 +1,4 @@
-import { ErrorPage } from "../../views/error";
+import { ErrorPage } from "@views/error";
 import { errorProps } from "./config";
 
 export class ServerErrorPage extends ErrorPage {

@@ -1,7 +1,7 @@
-import Block from "../../utils/block";
+import Block from "@utils/block";
 import template from "./buttonIconed.hbs";
 import { IButtonIconed } from "./types";
-import * as styles from "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 export class ButtonIconed extends Block<IButtonIconed> {
     render() {

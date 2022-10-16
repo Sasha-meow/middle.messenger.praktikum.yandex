@@ -1,4 +1,4 @@
-import { Notification } from "../components/notification";
+import { Notification } from "@components/notification";
 
 export const handleSuccess = (content: string) => {
     const successText = `Success! ${content}.`;

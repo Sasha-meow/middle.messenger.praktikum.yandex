@@ -1,5 +1,5 @@
-import { CenterText } from "../../components/centerText";
-import { Message } from "../../components/message";
+import { CenterText } from "@components/centerText";
+import { Message } from "@components/message";
 import { DialogField } from "../dialogField";
 import { DialogHeader } from "../dialogHeader";
 

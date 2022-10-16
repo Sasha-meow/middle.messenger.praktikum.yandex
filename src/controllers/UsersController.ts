@@ -1,9 +1,9 @@
-import store from "../utils/store";
+import store from "@utils/store";
 import API, { UsersAPI } from "../api/users/UsersApi";
-import { IAvatarData, IPasswordData, ISearchData } from "../api/users/types";
-import { IUser } from "../api/auth/types";
-import { handleError } from "../utils/handleError";
-import { handleSuccess } from "../utils/handleSuccess";
+import { IAvatarData, IPasswordData, ISearchData } from "@api/users/types";
+import { IUser } from "@api/auth/types";
+import { handleSuccess } from "@utils/handleSuccess";
+import { handleError } from "@utils/handleError";
 
 class UsersController {
     private readonly api: UsersAPI;

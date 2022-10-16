@@ -1,5 +1,5 @@
-import { Avatar } from "../../components/avatar";
-import { ButtonIconed } from "../../components/buttonIconed";
+import { Avatar } from "@components/avatar";
+import { ButtonIconed } from "@components/buttonIconed";
 
 export interface ISidebarHeader {
     login: string;

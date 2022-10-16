@@ -1,9 +1,9 @@
-import Block from "../../utils/block";
+import Block from "@utils/block";
 import template from "./notification.hbs";
 import { ButtonIconed } from "../buttonIconed";
 import { INotify } from "./types";
-import cancelIcon from "../../../static/images/cancel-icon.svg";
-import * as styles from "./styles.module.scss";
+import cancelIcon from "images/cancel-icon.svg";
+import styles from "./styles.module.scss";
 
 export class Notification extends Block<INotify> {
     init() {

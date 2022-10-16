@@ -2,5 +2,6 @@
 /dist
 /.parcel-cache
 /.github
+/src/**/*.test.ts
 server.js
 *.scss

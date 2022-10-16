@@ -1,8 +1,8 @@
-import { Field } from "../../components/field";
-import { Form } from "../../containers/form";
-import { Modal } from "../../containers/modal";
-import { IModal } from "../../containers/modal/types";
-import UsersController from "../../controllers/UsersController";
+import UsersController from "@controllers/UsersController";
+import { Field } from "@components/field";
+import { IModal } from "@containers/modal/types";
+import { Modal } from "@containers/modal";
+import { Form } from "@containers/form";
 
 export class UserAvatarModal extends Modal {
     constructor(props: IModal) {
