@@ -1,8 +1,8 @@
 import MessagesController from "./MessagesController";
-import store from "../utils/store";
+import store from "@utils/store";
 import API, { ChatsAPI } from "../api/chats/ChatsApi";
-import { handleError } from "../utils/handleError";
-import { handleSuccess } from "../utils/handleSuccess";
+import { handleSuccess } from "@utils/handleSuccess";
+import { handleError } from "@utils/handleError";
 
 class ChatsController {
     private readonly api: ChatsAPI;
@@ -101,6 +101,8 @@ class ChatsController {
             this.fetchChatUsers(id);
 
             store.set("selectedChat", id);
+
+            localStorage.setItem("id", id.toString());
         } catch (e) {
             handleError(e);
         }

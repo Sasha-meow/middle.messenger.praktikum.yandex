@@ -1,5 +1,5 @@
 import EventBus from "./eventBus";
-import { WSTransportEvents } from "../constants/constants";
+import { WSTransportEvents } from "@constants/constants";
 
 export default class WSTransport extends EventBus {
     private socket: WebSocket | null = null;
@@ -36,6 +36,7 @@ export default class WSTransport extends EventBus {
     }
 
     private setupPing() {
+        // @ts-ignore
         this.pingInterval = setInterval(() => {
             this.send({ type: "ping" });
         }, 5000);

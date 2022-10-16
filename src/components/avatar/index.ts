@@ -1,7 +1,7 @@
-import Block from "../../utils/block";
+import Block from "@utils/block";
 import template from "./avatar.hbs";
 import { IAvatar } from "./types";
-import * as styles from "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 export class Avatar extends Block<IAvatar> {
     render() {

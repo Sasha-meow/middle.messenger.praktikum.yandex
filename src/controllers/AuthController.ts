@@ -1,8 +1,8 @@
-import router from "../utils/router";
-import store from "../utils/store";
+import router from "@utils/router";
+import store from "@utils/store";
 import API, { AuthAPI } from "../api/auth/AuthApi";
-import { ISignInData, ISignUpData } from "../api/auth/types";
-import { handleError } from "../utils/handleError";
+import { ISignInData, ISignUpData } from "@api/auth/types";
+import { handleError } from "@utils/handleError";
 
 class AuthController {
     private readonly api: AuthAPI;
@@ -48,6 +48,7 @@ class AuthController {
 
             store.toInit();
             router.go("/");
+            localStorage.removeItem("id");
         } catch (e) {
             handleError(e);
         }

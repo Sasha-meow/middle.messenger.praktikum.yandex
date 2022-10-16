@@ -3,7 +3,7 @@
     "target": "es2016",
     "module": "commonjs",
     "allowJs": true,
-    "noEmit": true,
+    "noEmit": false,
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -12,10 +12,26 @@
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "skipLibCheck": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "sourceMap": true,
     "strictNullChecks": true,
-      
+    "typeRoots": ["./node_modules/@types", "src/types/*.d.ts"],
+    "moduleResolution": "Node",
+    "baseUrl": "./",
+    "paths": {
+      "@*": ["src/*"],
+    },
     "lib": ["ESNext", "DOM"]
-  }
+  },
+  "ts-node": {
+    "files": true,
+  },
+  "include": ["./src/**/*.ts", "src/types/*.d.ts"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.js",
+    "**/*.test.ts"
+  ],
+  "allowSyntheticDefaultImports": true
 }

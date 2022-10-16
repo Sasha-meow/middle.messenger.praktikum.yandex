@@ -1,5 +1,5 @@
-import { Button } from "../../components/button";
-import { Modal } from "../../containers/modal";
+import { Button } from "@components/button";
+import { Modal } from "@containers/modal";
 import { IConfirm } from "./types";
 
 export class ConfirmModal extends Modal {

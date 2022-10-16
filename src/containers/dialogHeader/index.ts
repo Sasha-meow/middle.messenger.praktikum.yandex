@@ -1,10 +1,10 @@
-import Block from "../../utils/block";
+import Block from "@utils/block";
 import template from "./dialogHeader.hbs";
-import { withSelectedChat } from "../../hocs/withSelectedChat";
-import { generateAvatar } from "../../utils/generateAvatar";
-import { Avatar } from "../../components/avatar";
+import { withSelectedChat } from "@hocs/withSelectedChat";
+import { generateAvatar } from "@utils/generateAvatar";
+import { Avatar } from "@components/avatar";
 import { IDialogHeader } from "./types";
-import * as styles from "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 class DialogHeaderBase extends Block<IDialogHeader> {
     init() {

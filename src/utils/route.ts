@@ -1,4 +1,4 @@
-import { BlockConstructable } from "../constants/types/global";
+import { BlockConstructable } from "@constants/types/global";
 import Block from "./block";
 import { mainRender } from "./mainRender";
 

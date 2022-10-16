@@ -1,6 +1,6 @@
 import EventBus from "./eventBus";
-import { StoreEvents } from "../constants/constants";
-import { IState } from "../constants/types/global";
+import { StoreEvents } from "@constants/constants";
+import { IState } from "@constants/types/global";
 import { set } from "./helpers";
 
 export class Store extends EventBus {

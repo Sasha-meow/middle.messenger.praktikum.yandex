@@ -1,6 +1,6 @@
-import EventBus from "./eventBus";
-import { nanoid } from "nanoid";
 import { TemplateDelegate } from "handlebars";
+import { nanoid } from "nanoid";
+import EventBus from "./eventBus";
 import { debounce } from "./debounce";
 
 export default class Block<T = {}> {

@@ -1,15 +1,15 @@
-import UsersController from "../../controllers/UsersController";
-import Block from "../../utils/block";
+import UsersController from "@controllers/UsersController";
+import Block from "@utils/block";
 import template from "./select.hbs";
-import { withSearchedUsers } from "../../hocs/withSearchedUsers";
-import { SearchBlock } from "../../containers/searchBlock";
-import { IUser } from "../../api/auth/types";
+import { withSearchedUsers } from "@hocs/withSearchedUsers";
+import { SearchBlock } from "@containers/searchBlock";
+import { IUser } from "@api/auth/types";
 import { ButtonIconed } from "../buttonIconed";
 import { Option } from "../option";
 import { Field } from "../field";
 import { ISelect } from "./types";
-import defaultSearch from "../../../static/images/search.svg";
-import * as styles from "./styles.module.scss";
+import defaultSearch from "images/search.svg";
+import styles from "./styles.module.scss";
 
 class SelectBase extends Block<ISelect> {
     init() {

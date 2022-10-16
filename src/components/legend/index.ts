@@ -1,7 +1,7 @@
-import Block from "../../utils/block";
+import Block from "@utils/block";
 import template from "./legend.hbs";
 import { ILegend } from "./types";
-import * as styles from "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 export class Legend extends Block<ILegend> {
     render() {

@@ -1,11 +1,11 @@
-import Block from "../../utils/block";
+import Block from "@utils/block";
 import template from "./sidebarHeader.hbs";
-import { UserAvatarModal } from "../../modals/UserAvatarModal";
-import { generateAvatar } from "../../utils/generateAvatar";
+import { UserAvatarModal } from "@modals/UserAvatarModal";
+import { generateAvatar } from "@utils/generateAvatar";
 import { ISidebarHeader } from "./types";
-import { Avatar } from "../../components/avatar";
-import { withUser } from "../../hocs/withUser";
-import * as styles from "./styles.module.scss";
+import { Avatar } from "@components/avatar";
+import { withUser } from "@hocs/withUser";
+import styles from "./styles.module.scss";
 
 class SidebarHeaderBase extends Block<ISidebarHeader> {
     init() {

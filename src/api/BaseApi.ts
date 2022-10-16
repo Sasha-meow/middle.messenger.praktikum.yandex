@@ -1,5 +1,5 @@
-import HTTPTransport from "../utils/transport";
-import { IParamsBase } from "../constants/types/global";
+import HTTPTransport from "@utils/transport";
+import { IParamsBase } from "@constants/types/global";
 
 export default abstract class BaseAPI {
     static API_URL = "https://ya-praktikum.tech/api/v2";

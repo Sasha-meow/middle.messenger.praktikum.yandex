@@ -1,4 +1,4 @@
-import { EntryPage } from "../../views/entry";
+import { EntryPage } from "@views/entry";
 import { registryForm } from "./config";
 
 export class RegistryPage extends EntryPage {

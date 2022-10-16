@@ -20,7 +20,8 @@
     &.bordered {
         background-color: $dark;
         border-radius: $border-radius-base;
-        border: $border-light;
+        border: $border-grey;
+        margin-left: theme.extent();
     }
 
     .iconed-btn__icon {

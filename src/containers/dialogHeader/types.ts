@@ -1,6 +1,6 @@
-import { ButtonIconed } from "../../components/buttonIconed";
-import { Avatar } from "../../components/avatar";
-import { Menu } from "../../components/menu";
+import { ButtonIconed } from "@components/buttonIconed";
+import { Avatar } from "@components/avatar";
+import { Menu } from "@components/menu";
 
 export interface IDialogHeader {
     avatar?: Avatar;
