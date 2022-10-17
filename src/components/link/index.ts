@@ -1,4 +1,4 @@
-import Block from "@utils/block";
+import Block from "../../utils/block";
 import template from "./link.hbs";
 import { ILink } from "./types";
 import styles from "./styles.module.scss";

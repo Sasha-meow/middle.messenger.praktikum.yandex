@@ -1,5 +1,5 @@
-import { IRequestOptions } from "@constants/types/global";
-import { Methods } from "@constants/constants";
+import { IRequestOptions } from "../constants/types/global";
+import { Methods } from "../constants/constants";
 import { queryStringify } from "./queryStringify";
 
 export default class HTTPTransport {

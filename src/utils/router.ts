@@ -1,5 +1,5 @@
-import { BlockConstructable } from "@constants/types/global";
-import { RoutesConfig } from "@constants/constants";
+import { BlockConstructable } from "../constants/types/global";
+import { RoutesConfig } from "../constants/constants";
 import { Route } from "./route";
 
 class Router {
