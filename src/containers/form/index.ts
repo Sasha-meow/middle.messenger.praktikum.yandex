@@ -1,10 +1,10 @@
-import Block from "../../utils/block";
+import Block from "@utils/block";
 import template from "./form.hbs";
-import { ButtonIconed } from "../../components/buttonIconed";
-import { Button } from "../../components/button";
-import { Field } from "../../components/field";
+import { ButtonIconed } from "@components/buttonIconed";
+import { Button } from "@components/button";
+import { Field } from "@components/field";
 import { IForm } from "./types";
-import * as styles from "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 export class Form extends Block<IForm> {
     init() {

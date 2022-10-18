@@ -1,11 +1,11 @@
-import Block from "../../utils/block";
+import Block from "@utils/block";
 import template from "./dialog.hbs";
-import { withSelectedChatMessages } from "../../hocs/withSelectedDialog";
-import { IMessageData } from "../../constants/types/global";
-import { CenterText } from "../../components/centerText";
-import { Message } from "../../components/message";
+import { withSelectedChatMessages } from "@hocs/withSelectedDialog";
+import { IMessageData } from "@constants/types/global";
+import { CenterText } from "@components/centerText";
+import { Message } from "@components/message";
 import { IDialog } from "./types";
-import * as styles from "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 class DialogBase extends Block {
     init() {

@@ -1,13 +1,13 @@
-import UsersController from "../../controllers/UsersController";
-import { passwordFields, profileFields } from "../../constants/content/fields";
-import { IPasswordData } from "../../api/users/types";
-import { IUser } from "../../api/auth/types";
-import { createFormFields } from "../../utils/createFields";
-import { withUser } from "../../hocs/withUser";
-import { Form } from "../../containers/form";
-import { Modal } from "../../containers/modal";
-import { Link } from "../../components/link";
-import settingsIcon from "../../../static/images/settings.svg";
+import UsersController from "@controllers/UsersController";
+import { passwordFields, profileFields } from "@constants/content/fields";
+import { IPasswordData } from "@api/users/types";
+import { IUser } from "@api/auth/types";
+import { createFormFields } from "@utils/createFields";
+import { withUser } from "@hocs/withUser";
+import { Form } from "@containers/form";
+import { Modal } from "@containers/modal";
+import { Link } from "@components/link";
+import settingsIcon from "images/settings.svg";
 
 class AccountModal extends Modal {
     init() {
@@ -31,7 +31,6 @@ class AccountModal extends Modal {
             },
             link: new Link({
                 text: "Change password",
-                href: "#",
                 events: {
                     click: () => {
                         this.setProps({

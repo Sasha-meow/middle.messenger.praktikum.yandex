@@ -1,14 +1,14 @@
-import ChatsController from "../../controllers/ChatsController";
-import Block from "../../utils/block";
+import ChatsController from "@controllers/ChatsController";
+import Block from "@utils/block";
 import template from "./list.hbs";
-import { IChatsListData } from "../../api/chats/types";
-import { generateAvatar } from "../../utils/generateAvatar";
-import { withChats } from "../../hocs/withChats";
-import { Avatar } from "../../components/avatar";
-import { Badge } from "../../components/badge";
+import { IChatsListData } from "@api/chats/types";
+import { generateAvatar } from "@utils/generateAvatar";
+import { withChats } from "@hocs/withChats";
+import { Avatar } from "@components/avatar";
+import { Badge } from "@components/badge";
 import { IList } from "./types";
 import { Item } from "../item";
-import * as styles from "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 class ListBase extends Block<IList> {
     init() {

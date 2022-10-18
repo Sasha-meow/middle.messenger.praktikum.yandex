@@ -1,10 +1,10 @@
-import Block from "../../utils/block";
+import Block from "@utils/block";
 import template from "./field.hbs";
-import { customValidate } from "../../utils/validator";
+import { customValidate } from "@utils/validator";
 import { ErrorMessage } from "../errorMessage";
 import { Input } from "../input";
 import { IField } from "./types";
-import * as styles from "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 export class Field extends Block<IField> {
     init() {

@@ -1,11 +1,11 @@
-import { IUser } from "../../api/auth/types";
-import { IChatsListData } from "../../api/chats/types";
-import { Button } from "../../components/button";
-import { Option } from "../../components/option";
-import { Modal } from "../../containers/modal";
-import { IModal } from "../../containers/modal/types";
-import ChatsController from "../../controllers/ChatsController";
-import { withSelectedChatUsers } from "../../hocs/withSelectedChatUsers";
+import ChatsController from "@controllers/ChatsController";
+import { IUser } from "@api/auth/types";
+import { IChatsListData } from "@api/chats/types";
+import { Button } from "@components/button";
+import { Option } from "@components/option";
+import { Modal } from "@containers/modal";
+import { IModal } from "@containers/modal/types";
+import { withSelectedChatUsers } from "@hocs/withSelectedChatUsers";
 
 class DeleteUsersModalBase extends Modal {
     constructor(props: IModal & { selectedChat: IChatsListData; selectedChatUsers: any[] }) {

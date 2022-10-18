@@ -1,7 +1,7 @@
-import Block from "../../utils/block";
-import router from "../../utils/router";
-import { IChatsListData } from "../../api/chats/types";
-import { IUser } from "../../api/auth/types";
+import Block from "@utils/block";
+import router from "@utils/router";
+import { IChatsListData } from "@api/chats/types";
+import { IUser } from "@api/auth/types";
 
 export interface IRequestOptions {
     method?: string;

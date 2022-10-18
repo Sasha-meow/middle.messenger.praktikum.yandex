@@ -1,4 +1,4 @@
-import { CenterText } from "../../components/centerText";
+import { CenterText } from "@components/centerText";
 
 export interface IErrorPage {
     centerText: CenterText;

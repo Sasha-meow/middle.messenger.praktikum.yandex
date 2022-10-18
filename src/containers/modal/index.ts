@@ -1,9 +1,9 @@
-import Block from "../../utils/block";
+import Block from "@utils/block";
 import template from "./modal.hbs";
-import { ButtonIconed } from "../../components/buttonIconed";
+import { ButtonIconed } from "@components/buttonIconed";
 import { IModal } from "./types";
-import cancelIcon from "../../../static/images/cancel-icon.svg";
-import * as styles from "./styles.module.scss";
+import cancelIcon from "images/cancel-icon.svg";
+import styles from "./styles.module.scss";
 
 export class Modal extends Block<IModal> {
     init() {

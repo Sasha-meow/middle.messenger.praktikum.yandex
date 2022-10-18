@@ -1,7 +1,7 @@
-import { StoreEvents } from "../constants/constants";
-import { IState } from "../constants/types/global";
-import Block from "../utils/block";
-import store from "../utils/store";
+import Block from "@utils/block";
+import store from "@utils/store";
+import { StoreEvents } from "@constants/constants";
+import { IState } from "@constants/types/global";
 
 export function withStore<SP>(mapStateToProps: (state: IState) => SP) {
     return function wrap<P>(Component: typeof Block<SP & P>) {

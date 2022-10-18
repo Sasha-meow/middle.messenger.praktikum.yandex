@@ -1,10 +1,11 @@
-import AuthController from "../../controllers/AuthController";
-import { createFormFields } from "../../utils/createFields";
-import { authFields } from "../../constants/content/fields";
-import { RoutesConfig } from "../../constants/constants";
-import { ISignInData } from "../../api/auth/types";
-import { Form } from "../../containers/form";
-import { Link } from "../../components/link";
+import AuthController from "@controllers/AuthController";
+import router from "@utils/router";
+import { createFormFields } from "@utils/createFields";
+import { authFields } from "@constants/content/fields";
+import { RoutesConfig } from "@constants/constants";
+import { ISignInData } from "@api/auth/types";
+import { Form } from "@containers/form";
+import { Link } from "@components/link";
 
 export const authForm = new Form({
     classForm: "login-form",
@@ -16,8 +17,10 @@ export const authForm = new Form({
         class: "sign-in",
     },
     link: new Link({
-        href: RoutesConfig.Register,
         text: "Sign up",
+        events: {
+            click: () => router.go(RoutesConfig.Register),
+        },
     }),
     afterSubmit: (data: ISignInData) => {
         AuthController.signin(data);

@@ -1,12 +1,12 @@
-import router from "../utils/router";
-import AuthController from "../controllers/AuthController";
-import { AuthPage } from "../pages/auth";
-import { RegistryPage } from "../pages/registry";
-import { NotFoundPage } from "../pages/notFound";
-import { ServerErrorPage } from "../pages/serverError";
-import { ListPage } from "../pages/list";
-import { RoutesConfig } from "../constants/constants";
-import "../styles/global.scss";
+import router from "@utils/router";
+import AuthController from "@controllers/AuthController";
+import { AuthPage } from "@pages/auth";
+import { RegistryPage } from "@pages/registry";
+import { NotFoundPage } from "@pages/notFound";
+import { ServerErrorPage } from "@pages/serverError";
+import { ListPage } from "@pages/list";
+import { RoutesConfig } from "@constants/constants";
+import "@styles/global.scss";
 
 window.addEventListener("DOMContentLoaded", async () => {
     router

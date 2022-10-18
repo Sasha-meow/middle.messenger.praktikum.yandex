@@ -1,8 +1,8 @@
-import Block from "../../utils/block";
+import Block from "@utils/block";
 import template from "./item.hbs";
-import { withSelectedChat } from "../../hocs/withSelectedChat";
+import { withSelectedChat } from "@hocs/withSelectedChat";
 import { IItem } from "./types";
-import * as styles from "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 class ItemBase extends Block<IItem> {
     render() {

@@ -2,16 +2,18 @@
 
 ### Описание
 
-Учебный проект "Messenger". Предполагает прототип мессенджера с функциями регистрации, авторизации, получением-отправкой сообщений.
+Учебный проект "Messenger". Предполагает прототип мессенджера с функциями регистрации, авторизации, получением-отправкой сообщений, редактированием профиля.
 
-Макет сделан в [Figma](https://www.figma.com/file/cp17L4umbewTRBurdgOue4/Chat-design?node-id=0%3A1) и в процессе разработки будет дорабатываться.
+Макет сделан в [Figma](https://www.figma.com/file/cp17L4umbewTRBurdgOue4/Chat-design?node-id=0%3A1).
 
-Актуальная версия задеплоена в сервисе [Netlify](https://app.netlify.com/) и доступна по [адресу](https://deploy--jocular-pony-266b95.netlify.app/)
+Актуальная версия задеплоена в сервисах:
++ [Netlify](https://app.netlify.com/) и доступна по [адресу](https://deploy--jocular-pony-266b95.netlify.app/)
++ [Heroku](https://dashboard.heroku.com/apps) и доступна по [адресу](https://meow-messenger.herokuapp.com/messenger)
 
 ### Что нового
 
-Реализован собственный роутер, вместе со стейт-менеджером на минималках :) Прикручены АПИ (авторизация, регистрация, логаут, редактирование профиля, пароля и аватара юзера, кроме того апи чатов - получение чатов (и поиск по ним), сообщений, отправка сообщений, добавление и удаление чата, добавление и удаление юзеров у чата, изменение аватара), добавлены новые модальные окна. Добавлена обработка ошибок: на действия, которые я посчитала нужными, прикрутила нотификации.
-Верстка еще будет дорабатываться и некоторые моменты работают не идеально, но все равно я очень старалась!
+В рамках последнего спринта внедрен сборщик Webpack, реализовано минимальное покрытие тестами с помощью Mocha и Chai, настроена Docker-сборка и precommit.
+Проведен аудит пакетов: основные уязвимости устранены (оставшиеся относятся к дев-версии и используются для сборки).
 
 ### Примечания
 
@@ -24,11 +26,11 @@
 
 ### Навигация
 
-+ [/auth](https://deploy--jocular-pony-266b95.netlify.app/auth) - страница авторизации
-+ [/register](https://deploy--jocular-pony-266b95.netlify.app/register) - страница регистрации
-+ [/](https://deploy--jocular-pony-266b95.netlify.app/) - страница списка чатов
-+ [/error](https://deploy--jocular-pony-266b95.netlify.app/error) - страница ошибки сервера
-+ [/not-found](https://deploy--jocular-pony-266b95.netlify.app/not-found) или любой отличный от адресов выше - страница 400
++ [/](https://meow-messenger.herokuapp.com/) - страница авторизации
++ [/sign-up](https://meow-messenger.herokuapp.com/sign-up) - страница регистрации
++ [/messenger](https://meow-messenger.herokuapp.com/messenger) - страница списка чатов
++ [/error](https://meow-messenger.herokuapp.com/error) - страница ошибки сервера
++ [/not-found](https://meow-messenger.herokuapp.com/not-found) или любой отличный от адресов выше - страница 400
 
 ### Установка
 
@@ -42,11 +44,14 @@
 ### Технологии
 
 + Figma
-+ Parcel
++ Webpack
 + Handlebars
 + SCSS
 + Express
 + Netlify
++ Haroku
++ Docker
 + TypeScript
 + ESLint
 + Stylelint
++ Mocha, Chai

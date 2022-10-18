@@ -1,12 +1,12 @@
-import MessagesController from "../../controllers/MessagesController";
-import Block from "../../utils/block";
+import MessagesController from "@controllers/MessagesController";
+import Block from "@utils/block";
 import template from "./dialogField.hbs";
-import { withSelectedChat } from "../../hocs/withSelectedChat";
-import { ButtonIconed } from "../../components/buttonIconed";
+import { withSelectedChat } from "@hocs/withSelectedChat";
+import { ButtonIconed } from "@components/buttonIconed";
+import { Field } from "@components/field";
 import { IDialogField } from "./types";
-import { Field } from "../../components/field";
-import sendIcon from "../../../static/images/send-icon.svg";
-import * as styles from "./styles.module.scss";
+import sendIcon from "images/send-icon.svg";
+import styles from "./styles.module.scss";
 
 class DialogFieldBase extends Block<IDialogField> {
     init() {
@@ -14,6 +14,7 @@ class DialogFieldBase extends Block<IDialogField> {
             icon: sendIcon,
             type: "submit",
             size: "xl",
+            bordered: true,
             events: {
                 click: this.handleSubmit.bind(this),
             },

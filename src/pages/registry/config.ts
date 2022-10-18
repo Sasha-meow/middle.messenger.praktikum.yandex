@@ -1,10 +1,11 @@
-import AuthController from "../../controllers/AuthController";
-import { registryFields } from "../../constants/content/fields";
-import { RoutesConfig } from "../../constants/constants";
-import { createFormFields } from "../../utils/createFields";
-import { ISignUpData } from "../../api/auth/types";
-import { Form } from "../../containers/form";
-import { Link } from "../../components/link";
+import AuthController from "@controllers/AuthController";
+import router from "@utils/router";
+import { registryFields } from "@constants/content/fields";
+import { RoutesConfig } from "@constants/constants";
+import { createFormFields } from "@utils/createFields";
+import { ISignUpData } from "@api/auth/types";
+import { Form } from "@containers/form";
+import { Link } from "@components/link";
 
 export const registryForm = new Form({
     classForm: "login-form",
@@ -16,8 +17,10 @@ export const registryForm = new Form({
         class: "sign-up",
     },
     link: new Link({
-        href: RoutesConfig.Auth,
         text: "Go back",
+        events: {
+            click: () => router.go(RoutesConfig.Auth),
+        },
     }),
     afterSubmit: (data: ISignUpData) => {
         AuthController.signup(data);

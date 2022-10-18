@@ -1,6 +1,6 @@
 import router from "./router";
-import { Notification } from "../components/notification";
-import { RoutesConfig } from "../constants/constants";
+import { Notification } from "@components/notification";
+import { RoutesConfig } from "@constants/constants";
 
 export const handleError = (e: XMLHttpRequest | string | unknown, isQuiet?: boolean) => {
     let errorText: string;

@@ -1,5 +1,5 @@
-import defaultAvatar from "../../static/images/avatar.svg";
-import { resourceUrl } from "../constants/constants";
+import defaultAvatar from "images/avatar.svg";
+import { resourceUrl } from "@constants/constants";
 
 export const generateAvatar = (path: string | null) => {
     if (path) {

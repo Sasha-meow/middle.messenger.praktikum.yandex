@@ -1,7 +1,7 @@
-import WSTransport from "../utils/wsTransport";
-import store from "../utils/store";
-import { WSTransportEvents } from "../constants/constants";
-import { IMessageData } from "../constants/types/global";
+import WSTransport from "@utils/wsTransport";
+import store from "@utils/store";
+import { WSTransportEvents } from "@constants/constants";
+import { IMessageData } from "@constants/types/global";
 
 class MessagesController {
     private sockets: Map<number, WSTransport> = new Map();
